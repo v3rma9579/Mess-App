@@ -65,7 +65,7 @@
             var user =data.currentUser
     
             alert(data.user.email+'Logged In successfully')
-            window.location.href = "../Student_dashboard/index.html";
+            window.location.href = "../Student_dashboard/dashboard.html";
         })
         .catch(function(error){
             var error_code = error.code;
