@@ -47,14 +47,18 @@
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    if(validate_email(email)==false && validate_password(password)==falee){
-        alert('Email and Password is wrong');
+    if(validate_email(email)==false && validate_password(password)==false){
+        // alert('Email and Password is wrong');
+        document.getElementById("erroremail").innerHTML="Please Enter Email";
+        document.getElementById("errorpass").innerHTML="Please Enter password";
     }
     else if(validate_email(email)==false){
-        alert('Email is wrong');
+        // alert('Email is wrong');
+        document.getElementById("erroremail").innerHTML="Email is Incorrect";
     }
     else if(validate_password(password)==false){
-        alert('Password is wrong');
+        // alert('Password is wrong');
+        document.getElementById("errorpass").innerHTML="Pass is Incorrect";
     }
 
     const docRef = doc(db, "user", email);
@@ -63,9 +67,8 @@
     if(docSnap.exists()){
         signInWithEmailAndPassword(auth,email,password).then(function(data){
             var user =data.currentUser
-    
-            alert(data.user.email+'Logged In successfully')
-            window.location.href = "../Student_dashboard/dashboard.html";
+            alert(data.user.email+' Logged In successfully')
+            window.location.href = "../Student_dashboard/index.html";
         })
         .catch(function(error){
             var error_code = error.code;

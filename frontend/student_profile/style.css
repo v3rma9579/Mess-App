@@ -1,33 +1,38 @@
 body {
-  background: #BA68C8;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
-.form-control:focus {
-  box-shadow: none;
-  border-color: #BA68C8;
+h1 {
+  text-align: center;
 }
 
-.profile-button {
-  background: #BA68C8;
-  box-shadow: none;
-  border: none;
+fieldset {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
 }
 
-.profile-button:hover {
-  background: #682773;
+legend {
+  font-weight: bold;
 }
 
-.profile-button:focus {
-  background: #682773;
-  box-shadow: none;
+label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.profile-button:active {
-  background: #682773;
-  box-shadow: none;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-.back:hover {
-  color: #682773;
-  cursor: pointer;
+.info {
+  font-style: italic;
 }
