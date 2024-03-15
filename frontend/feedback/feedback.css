@@ -1,0 +1,83 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../feedback/background.jpg");
+    color: #333;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    filter: none;
+}
+
+h2 {
+    text-transform:uppercase;
+    letter-spacing: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Makes sure the padding does not affect the final computed width of the input */
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    margin: 0 10px 0 0;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    align-items: center;
+}
+
+h2::first-line{
+    font-size: 50px;
+    color: rgb(212, 247, 247);
+}
+
