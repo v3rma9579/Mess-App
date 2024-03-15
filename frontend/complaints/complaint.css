@@ -1,0 +1,72 @@
+body {
+    background-image: url("../image/complaint image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* font-family: 'Arial', sans-serif;/ */
+    justify-content: center;
+    align-items: center;
+}
+/* Style for the form to make it visually appealing */
+form {
+    background: rgb(231, 239, 240);
+    margin-top: 30px;
+    margin-left: 470px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0, 96, 128);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Spacing and style for each form section */
+div {
+    margin-bottom: 15px;
+}
+
+/* Label styling for clarity and readability */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input and textarea styling for a unified and appealing look */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
+/* Button styling for a noticeable and interactive submit button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #13a6c0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+h1{
+    font-size: 50px;
+    color: rgb(99, 192, 234);
+    text-align: center;
+    margin-top: 80px;;
+}
+
+/* Button hover effect for visual feedback */
+button:hover {
+    background-color: #15ee1c;
+}
+
+/* Responsive adjustments for better mobile viewing */
+@media (max-width: 768px) {
+    body, form {
+        width: 90%;
+        padding: 10px;
+    }
+}
