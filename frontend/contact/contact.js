@@ -1,38 +1,58 @@
-const inputs = document.querySelectorAll(".input");
+// Initialize Firebase 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import {setDoc,getFirestore, doc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+var firebaseConfig = {
+  apiKey: "AIzaSyDRl9n7bOgYSegReCR0CFJ_BRb63IoKy0w",
+  authDomain: "mess-maintainance.firebaseapp.com",
+  projectId: "mess-maintainance",
+  storageBucket: "mess-maintainance.appspot.com",
+  messagingSenderId: "823193074711",
+  appId: "1:823193074711:web:23d8c3fa137a8f15627052"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-function focusFunc() {
-  let parent = this.parentNode;
-  parent.classList.add("focus");
+// Listen for form submit
+document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+// Submit form
+function submitForm(e){
+  e.preventDefault();
+
+  // Get values
+  var name = getInputVal('name');
+  var company = getInputVal('company');
+  var email = getInputVal('email');
+  var phone = getInputVal('phone');
+  var message = getInputVal('message');
+
+  // Save message
+  saveMessage(name, company, email, phone, message);
+
+  // Show alert
+  document.querySelector('.alert').style.display = 'block';
+
+  // Hide alert after 3 seconds
+  setTimeout(function(){
+    document.querySelector('.alert').style.display = 'none';
+  },3000);
+
+  // Clear form
+  document.getElementById('contactForm').reset();
 }
 
-function blurFunc() {
-  let parent = this.parentNode;
-  if (this.value == "") {
-    parent.classList.remove("focus");
-  }
+// Function to get get form values
+function getInputVal(id){
+  return document.getElementById(id).value;
 }
 
-inputs.forEach((input) => {
-  input.addEventListener("focus", focusFunc);
-  input.addEventListener("blur", blurFunc);
-});
-
-var phoneInput = document.querySelector('input[name="phone"]');
-
- 
-  phoneInput.addEventListener('input', function(event) {
-    
-    var phone = event.target.value;
-
-    
-    var cleaned = phone.replace(/\D/g, '');
-
-    
-    if (cleaned.length === 10) {
-      
-      phoneInput.setCustomValidity('');
-    } else {
-      
-      phoneInput.setCustomValidity('Phone number must be 10 digits');
-    }
+// Save message to firebase
+async function  saveMessage(name, company, email, phone, message){
+  await setDoc(doc(db, "contact", email), {
+    'name': name,
+    'company':company,
+    'email':email,
+    'phone':phone,
+    'message':message
   });
+}
