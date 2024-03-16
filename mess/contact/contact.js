@@ -21,13 +21,13 @@ function submitForm(e){
 
   // Get values
   var name = getInputVal('name');
-  var company = getInputVal('company');
+  var hostel = getInputVal('hostel');
   var email = getInputVal('email');
   var phone = getInputVal('phone');
   var message = getInputVal('message');
 
   // Save message
-  saveMessage(name, company, email, phone, message);
+  saveMessage(name, hostel, email, phone, message);
 
   // Show alert
   document.querySelector('.alert').style.display = 'block';
@@ -47,10 +47,10 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-async function  saveMessage(name, company, email, phone, message){
+async function  saveMessage(name, hostel, email, phone, message){
   await setDoc(doc(db, "contact", email), {
     'name': name,
-    'company':company,
+    'hostel':hostel,
     'email':email,
     'phone':phone,
     'message':message

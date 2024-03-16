@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bill-table {
+    border-collapse: collapse;
+    width: 1200px;
+    font-family: Arial, sans-serif; /* Change font style */
+}
+
+.bill-table th,
+.bill-table td {
+    padding: 15px; /* Increase padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.bill-table thead {
+    background-color: #f2f2f2;
+}
+
+.bill-table th {
+    font-weight: bold; 
+}
+
+.bill-table tfoot {
+    font-weight: bold; 
+}

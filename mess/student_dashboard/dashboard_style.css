@@ -22,8 +22,8 @@ nav{
   bottom: 0;
   height: 100vh;
   left: 0;
-  background: #fff;
-  width: 280px;
+  background: #d3c3105d;
+  width: 390px;
   overflow: hidden;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
@@ -71,4 +71,3 @@ a:hover{
   position: absolute;
   bottom: 0;
 }
-
