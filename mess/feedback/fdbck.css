@@ -1,0 +1,121 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(40deg, #0800ff, #009dff); */
+  /* background-color: rgb(249, 0, 0); */
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+
+}
+#hding{
+  margin-top: -30px;
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 10px;
+  width: 300px;
+  border-radius: 20px;
+  border: 2px solid black;
+  box-shadow: 0 2px 20px 0 rgb(255, 255, 255);
+}
+.rating-box {
+  position: relative;
+  background: #00000043;
+  padding: 25px 50px 35px;
+  border-radius: 25px;
+  /* box-shadow: 0 4px 40px 0 rgb(255, 255, 255), 0 5px 20px 0 rgb(255, 255, 255); */
+  border: 2px solid black;
+  width: 800px;
+  height: auto;
+  /* opacity: 0.5; */
+  
+}
+.rating-box header {
+  font-size: 22px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 20px;
+  /* text-align: center; */
+  justify-content: center;
+}
+.rating-box .stars1 {
+  display: flex;
+  /* align-items: center; */
+  gap: 25px;
+  justify-content: center;
+  
+}
+.rating-box .stars2 {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 25px;
+}
+.rating-box .stars3 {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 25px;
+}
+.stars1 i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars2 i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  
+}
+.stars3 i {
+  color: #e6e6e6;
+  font-size: 35px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars1 i.active {
+  color: #ff9c1a;
+}
+.stars2 i.active {
+  color: #ff9c1a;
+}
+.stars3 i.active {
+  color: #ff9c1a;
+}
+
+
+#tarea{
+  height: 120px;
+  width: 350px;
+  resize: none;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.501);
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  padding: 5px;
+  
+}
+.btnsubmit{
+  padding: 10px;
+  width: 150px;
+  height: auto;
+  margin-top: 30px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-size: larger;
+  border-radius: 50px;
+  box-shadow: 0 4px 40px 0 rgb(255, 255, 255), 0 5px 20px 0 rgb(0, 0, 0);
+}
