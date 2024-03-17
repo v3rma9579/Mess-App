@@ -41,7 +41,6 @@ function submitForm(e){
   document.getElementById('contactForm').reset();
 }
 
-// Function to get get form values
 function getInputVal(id){
   return document.getElementById(id).value;
 }
