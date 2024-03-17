@@ -1,5 +1,5 @@
 body {
-    background-image: url("../image/complaint image.jpeg");
+    background-image: url("../complaints/complaint\ image.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,11 +7,12 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 /* Style for the form to make it visually appealing */
 form {
-    background: rgb(231, 239, 240);
+    background: #eaeaea;
     margin-top: 30px;
-    margin-left: 470px;
+    /* margin-left: 570px; */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(0, 96, 128);
@@ -23,6 +24,14 @@ form {
 div {
     margin-bottom: 15px;
 }
+
+#formp{
+    display: flex;
+    justify-content: center;
+    
+}
+
+
 
 /* Label styling for clarity and readability */
 label {
