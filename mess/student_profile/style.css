@@ -1,38 +1,69 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
+
+body{
+  margin-top:20px;
+  background:#f5f5f5;
+}
+/**
+* Panels
+*/
+/*** General styles ***/
+.panel {
+box-shadow: none;
+}
+.panel-heading {
+border-bottom: 0;
+}
+.panel-title {
+font-size: 17px;
+}
+.panel-title > small {
+font-size: .75em;
+color: #999999;
+}
+.panel-body *:first-child {
+margin-top: 0;
+}
+.panel-footer {
+border-top: 0;
 }
 
-h1 {
-  text-align: center;
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.07);
 }
 
-fieldset {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
+form label {
+  color: #999999;
+  font-weight: 400;
 }
 
-legend {
-  font-weight: bold;
+.form-horizontal .form-group {
+margin-left: -15px;
+margin-right: -15px;
+}
+@media (min-width: 768px) {
+.form-horizontal .control-label {
+  text-align: right;
+  margin-bottom: 0;
+  padding-top: 7px;
+}
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+.profile__contact-info-icon {
+  float: left;
+  font-size: 18px;
+  color: #999999;
 }
-
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="file"] {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+.profile__contact-info-body {
+  overflow: hidden;
+  padding-left: 20px;
+  color: #999999;
 }
-
-.info {
-  font-style: italic;
+.profile-avatar {
+width: 200px;
+position: relative;
+margin: 0px auto;
+margin-top: 196px;
+border: 4px solid #f3f3f3;
 }
