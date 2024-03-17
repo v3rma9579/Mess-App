@@ -13,7 +13,7 @@ h1 {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #f8d7da;
+  background-color: #eaeaea;
   padding: 10px;
   border: 1px solid #f5c6cb;
   border-radius: 5px;
@@ -24,7 +24,8 @@ h1 {
 .content-table {
   margin-left: 50px;
   align-items: center;
-  border-collapse: collapse;
+  border: 2px solid black;
+  /* border-collapse: collapse; */
   margin: 25px 0;
   font-size: 0.9em;
   justify-content:center;
@@ -35,19 +36,23 @@ h1 {
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   
+  
 }
 
 .content-table thead tr {
   align-items: center;
-  background-color: #009879;
+  background-color: #000398;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
+  
 }
 
 .content-table th,
 .content-table td {
   padding: 12px 15px;
+  border: 1px solid black;
+  /* border-collapse: collapse; */
 }
 
 .content-table tbody tr {
