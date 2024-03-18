@@ -1,4 +1,4 @@
-<img src="./assets/logo.png" width="20%">
+<img src="mess/images/logo.png" width="20%">
 
 # Mess Maintenance System
 
@@ -11,6 +11,45 @@
 
 This is a project based on BIT Mess Maintenance System.
 
+
+<br>
+<br>
+
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+
+<h3 align="left">Languages and Tools:</h3>
+
+- Frontend
+<p align="left">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+    <img src="https://skillicons.dev/icons?i=html,css,bootstrap" />
+  </a>
+</p>
+
+- Backend
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=javascript,firebase" />
+  </a>
+</p>
+
+
+
+- Database
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=firebase" />
+  </a>
+</p>
+
+- Tools
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=git,github,figma" />
+  </a>
+</p>
+
+<br/>
 
 <!--
 ##### Download APK
@@ -43,7 +82,14 @@ cd \Mess-App
 
 1. Home Page
 
-![img.png](screenshots/home-page.png)
+![img.png](mess/images/home_page.png)
+
+
+
+
+2. Student Dashboard
+
+![img.png](mess/images/dashboard.png)
 
 ## License
 
