@@ -30,6 +30,7 @@ table {
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
+  
 }
 
 th, td {
@@ -58,7 +59,9 @@ input[type="text"] {
   border-radius: 5px;
   box-sizing: border-box;
 }
-
+input:focus{
+  outline:none;
+}
 /* Button styles */
 button {
   background-color: #4CAF50;
