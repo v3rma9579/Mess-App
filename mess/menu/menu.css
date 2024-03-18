@@ -30,6 +30,7 @@ table {
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
+  
 }
 
 th, td {
@@ -39,7 +40,7 @@ th, td {
 }
 
 thead {
-  background-color: #f0f0f0;
+  background-color: #478de8;
 }
 
 tbody tr:nth-child(even) {
@@ -54,11 +55,13 @@ tbody tr:hover {
 input[type="text"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
-
+input:focus{
+  outline:none;
+}
 /* Button styles */
 button {
   background-color: #4CAF50;
