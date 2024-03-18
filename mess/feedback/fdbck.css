@@ -1,13 +1,14 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
+ 
+  /* padding: 0; */
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 body {
-  height: 100vh;
+  margin-top: 25px;
+  /* height: auto; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +37,10 @@ body {
   /* box-shadow: 0 4px 40px 0 rgb(255, 255, 255), 0 5px 20px 0 rgb(255, 255, 255); */
   border: 2px solid black;
   width: 800px;
+<<<<<<< HEAD
   /* height: 500px; */
+=======
+>>>>>>> 4460166ef77bc3a7335412ff2ae3f626605b2daa
   /* height: auto; */
   
   /* opacity: 0.5; */

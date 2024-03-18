@@ -9,7 +9,7 @@
 <body>
     <h1>Complaint Form</h1>
      <div id="formp">
-    <form action="submitComplaint" method="post">
+    <form id="complaint">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -19,11 +19,12 @@
             <input type="email" id="email" name="email" required>
         </div>
         <div>
-            <label for="description">Complaint Description:</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
+            <label for="message">Complaint Description:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
         </div>
         <button type="submit">Submit</button>
     </form>
     </div>
+    <script type="module" src="complaint.js"></script>
 </body>
 </html>

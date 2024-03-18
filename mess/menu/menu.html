@@ -1,90 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mess Menu</title>
-  <link rel="stylesheet" href="menu.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Management</title>
+<link rel="stylesheet" href="menu.css">
 </head>
-
 <body>
-  <h1> Mess Menu</h1>
-  <table class="content-table">
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>BREAKFAST (7:30 AM - 9:00 AM)</th>
-        <th>LUNCH (12:30 PM - 2:00 PM)</th>
-        <th>SNACKS (5:00 PM - 6:00 PM)</th>
-        <th>DINNER (8:30 PM - 10:00 PM)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Monday</td>
-        <td>Brown bread, Butter, Jam, Milk/Omelet, Apple/Orange (1pc.), Tea</td>
-        <td>Rice, Roti, Rajma, Finger Chips, Salad</td>
-        <td>Chowmein/Poha with Sauce, Tea</td>
-        <td>Rice, Roti, Dal, Mix Veg, Salad</td>
-      </tr>
-      <tr>
-        <td>Tuesday</td>
-        <td>Palak/ Methi Puri, Jaleebi, Chana-Aloo Sabji, Tea</td>
-        <td>Rice, Roti, Dal, Aloo Kathal/ Veg Kofta, Salad</td>
-        <td>Tickey Chat, Tea</td>
-        <td>Fried Rice, Poori, Dal, Chola, Kheer</td>
-      </tr>
-      <tr>
-        <td>Wednesday</td>
-        <td>Idli-Sambhar/Uthappam, Chutney, Tea</td>
-        <td>Rice, Roti, Dal, Mix Veg, Salad, </td>
-        <td>Maggi, Tea</td>
-        <td>Veg Biryani/Chicken Biryani,
-          Raita</td>
-      </tr>
-      <tr>
-        <td>Thurday</td>
-        <td>Sattu/Methi paratha, AlooMatar Sabji, Egg-2pc/Milk Tea</td>
-        <td>Vegpulao, Roti, Channa Dal, Aloo
-          Gobi Matar/Aloo Beans, Salad</td>
-        <td>Cheese Sandwich/ Aloo Sandwich, Tea</td>
-        <td>Rice, Butter Roti, Dal, Mix-Veg,
-          Sweets</td>
-      </tr>
-      <tr>
-        <td>Friday</td>
-        <td>Corn flakes, Milk, Banana(2pc.), Tea</td>
-        <td>Rice, Roti, Dal, Soyabeen,
-          Boondiraita, Salad</td>
-        <td>Pav Bhaji, Coffee</td>
-        <td>Rice, Roti, Dal, Palak Paneer/ Egg
-          Curry
-        </td>
-      </tr>
-      <tr>
-        <td>Saturday</td>
-        <td>Chola-Bhatura, Coffee</td>
-        <td>Khichdi, Dahi, Aloo-Chokha, Fry</td>
-        <td>Samosa, Tea</td>
-        <td>Jeera Rice, Roti, Dal Tadka, Aloo
-          Matar, Sweets</td>
-      </tr>
-      <tr>
-        <td>Sunday</td>
-        <td>Aloo-Paratha, Chutney, Tea</td>
-        <td>Rice, Roti, Besan Pakoda, Crispy
-          Aloo, Salad</td>
-        <td>Pastry, Patties,
-          Coffee
-        </td>
-        <td>Rice, Roti, Paneer Curry /Chicken
-          Curry/Chicken Khassa</td>
-      </tr>
+    <div class="container">
+        <h1>Menu </h1>
+        <table id="menuTable">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Snack</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Menu items will be rendered here dynamically -->
+            </tbody>
+        </table>
+    </div>
 
-    </tbody>
-  </table>
+<script type="module" src="menu.js"></script>
 </body>
-
 </html>
