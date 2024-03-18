@@ -39,7 +39,7 @@ th, td {
 }
 
 thead {
-  background-color: #f0f0f0;
+  background-color: #478de8;
 }
 
 tbody tr:nth-child(even) {
@@ -54,24 +54,9 @@ tbody tr:hover {
 input[type="text"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   box-sizing: border-box;
-}
-
-/* Button styles */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #45a049;
 }
 
 /* Responsive styles */
