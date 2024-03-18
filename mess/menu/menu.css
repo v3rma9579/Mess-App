@@ -10,7 +10,8 @@ body {
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 20px auto;
+  /* margin-top: 20px; */
+  margin: 30px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -19,14 +20,8 @@ body {
 
 h1 {
   text-align: center;
-<<<<<<< HEAD
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  margin-top: 80px;
-=======
   margin-bottom: 20px;
   color: #333;
->>>>>>> 4460166ef77bc3a7335412ff2ae3f626605b2daa
 }
 
 /* Table styles */

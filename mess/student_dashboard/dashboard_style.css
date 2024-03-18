@@ -21,6 +21,7 @@ body{
 nav{
   position: relative;
   margin-top: 0;
+  padding: 7px;
   bottom: 0;
   height: 100vh;
   left: 0;
@@ -69,7 +70,7 @@ nav .fas{
 a:hover{
   background: #ffffff;
   color: black;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 .logout{
   position: absolute;
