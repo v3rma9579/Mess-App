@@ -1,3 +1,4 @@
+
 // Initialize Firebase 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import {setDoc,getFirestore, doc} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
@@ -13,7 +14,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+document.getElementById('complaint').addEventListener('submit', submitForm);
 
 // Submit form
 function submitForm(e){
@@ -21,24 +22,22 @@ function submitForm(e){
 
   // Get values
   var name = getInputVal('name');
-  var hostel = getInputVal('hostel');
   var email = getInputVal('email');
-  var phone = getInputVal('phone');
   var message = getInputVal('message');
 
   // Save message
-  saveMessage(name, hostel, email, phone, message);
+  saveMessage(name,email,message);
+    alert("Response submitted");
+//   // Show alert
+//   document.querySelector('.alert').style.display = 'block';
 
-  // Show alert
-  document.querySelector('.alert').style.display = 'block';
-
-  // Hide alert after 3 seconds
-  setTimeout(function(){
-    document.querySelector('.alert').style.display = 'none';
-  },3000);
+//   // Hide alert after 3 seconds
+//   setTimeout(function(){
+//     document.querySelector('.alert').style.display = 'none';
+//   },3000);
 
   // Clear form
-  document.getElementById('contactForm').reset();
+  document.getElementById('complaint').reset();
 }
 
 function getInputVal(id){
@@ -46,12 +45,10 @@ function getInputVal(id){
 }
 
 // Save message to firebase
-async function  saveMessage(name, hostel, email, phone, message){
-  await setDoc(doc(db, "contact", email), {
+async function  saveMessage(name, email, message){
+  await setDoc(doc(db, "complaint", email), {
     'name': name,
-    'hostel':hostel,
     'email':email,
-    'phone':phone,
     'message':message
   });
 }

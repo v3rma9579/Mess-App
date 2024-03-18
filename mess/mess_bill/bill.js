@@ -55,9 +55,6 @@ const monthly_bill = `
         <td colspan="4" class="grand total">GRAND TOTAL</td>
         <td class="grand total">192.00</td>
         </tr>
-
-
-
     </tbody>
     </table>
     <div id="notices">
@@ -66,7 +63,6 @@ const monthly_bill = `
     This is an auto generated invoice.
 </footer>
 </body>
-
 </html>        
 `
 function printUserData() {

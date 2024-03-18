@@ -39,6 +39,7 @@ async function renderMenu() {
                                 <td><input type="text" id="lunch-${currentDay}" value="${data.lunch || ''}"></td>
                                 <td><input type="text" id="snack-${currentDay}" value="${data.snack || ''}"></td>
                                 <td><input type="text" id="dinner-${currentDay}" value="${data.dinner || ''}"></td>
+                                <td><button onclick="updateMenu('${currentDay}')">Update</button></td>
                             </tr>`;
                 menuTable.innerHTML += row;
             } else {
@@ -51,26 +52,26 @@ async function renderMenu() {
 }
 
 // Function to handle menu update
-// window.updateMenu = async function(day) {
-//     try {
-//         const breakfastInput = document.getElementById(`breakfast-${day}`);
-//         const lunchInput = document.getElementById(`lunch-${day}`);
-//         const snackInput = document.getElementById(`snack-${day}`);
-//         const dinnerInput = document.getElementById(`dinner-${day}`);
+window.updateMenu = async function(day) {
+    try {
+        const breakfastInput = document.getElementById(`breakfast-${day}`);
+        const lunchInput = document.getElementById(`lunch-${day}`);
+        const snackInput = document.getElementById(`snack-${day}`);
+        const dinnerInput = document.getElementById(`dinner-${day}`);
 
-//         const menuData = {
-//             breakfast: breakfastInput.value,
-//             lunch: lunchInput.value,
-//             snack: snackInput.value,
-//             dinner: dinnerInput.value
-//         };
+        const menuData = {
+            breakfast: breakfastInput.value,
+            lunch: lunchInput.value,
+            snack: snackInput.value,
+            dinner: dinnerInput.value
+        };
 
-//         await setDoc(doc(firestore, 'menu', day), menuData);
-//         console.log(`Menu updated successfully for ${day}`);
-//     } catch (error) {
-//         console.error(`Error updating menu for ${day}:`, error);
-//     }
-// }
+        await setDoc(doc(firestore, 'menu', day), menuData);
+        console.log(`Menu updated successfully for ${day}`);
+    } catch (error) {
+        console.error(`Error updating menu for ${day}:`, error);
+    }
+}
 
 // function to initialize the menu table
 renderMenu();

@@ -15,14 +15,17 @@ body{
 }
 .container{
   display: flex;
+
+
 }
 nav{
   position: relative;
-  top: 0;
+  margin-top: 0;
+  padding: 7px;
   bottom: 0;
   height: 100vh;
   left: 0;
-  background: #d3c3105d;
+  background: #6403ff;
   width: 100vh;
   overflow: hidden;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -45,7 +48,7 @@ nav{
 }
 a{
   position: relative;
-  color: rgb(85, 83, 83);
+  color: rgb(255, 255, 255);
   font-size: 14px;
   display: table;
   width: 280px;
@@ -65,7 +68,9 @@ nav .fas{
   margin-left: 10px;
 }
 a:hover{
-  background: #eee;
+  background: #ffffff;
+  color: black;
+  border-radius: 50px;
 }
 .logout{
   position: absolute;
