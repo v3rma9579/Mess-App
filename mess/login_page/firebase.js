@@ -68,7 +68,7 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
         signInWithEmailAndPassword(auth, email, password).then(function (data) {
             var user = data.currentUser
             alert(data.user.email + ' Logged In successfully')
-            window.location.href = "../Student_dashboard/index.html";
+            window.location.replace ("../Student_dashboard/index.html");
         })
             .catch(function (error) {
                 var error_code = error.code;

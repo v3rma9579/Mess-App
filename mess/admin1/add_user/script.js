@@ -55,7 +55,7 @@ document.getElementById("upload").addEventListener('click', async (e) => {
         await setDoc(doc(firestore, "user", student.email), {
           'email': student.email,
         });
-        await auth.createUserWithEmailAndPassword(student.email, student.phone);
+        await createUserWithEmailAndPassword(auth,student.email, student.phone);
         // await firestore.collection('user').doc(email).set({
         //   email: student.email,
         // //   phone: student.phone
