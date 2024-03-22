@@ -28,6 +28,9 @@ h4{
     border-radius: 6px;
     object-fit: cover;
 }
+#img-section{
+    margin-left: 25px;
+}
 #img-section p,#deactivate p{
     font-size: 12px;
     color: #777;
@@ -53,9 +56,19 @@ label{
 input[placeholder]{
     font-weight: 500;
 }
+
 .form-control:focus{
     box-shadow: none;
     border: 1.5px solid #0779e4;
+}
+.form-control input:focus{
+   outline: none;
+}
+.ip{
+    outline: none;
+}
+textarea:focus,input:focus{
+    outline: none;
 }
 select{
     display: block;

@@ -16,7 +16,10 @@ var firebaseConfig = {
 var app = initializeApp(firebaseConfig);
 var db = getFirestore(app);
 
-export async function fetch_data() {
+export const totalMessBill = 0; 
+
+
+async function fetch_data() {
     var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
     if (docRef.exists()) {
         console.log(docRef.data())
@@ -47,10 +50,7 @@ export async function fetch_data() {
 
         total.textContent = t
 
-        return t;
-
-        totalMessBill = 1000;
+        totalMessBill = t
     }
 }
 fetch_data()
-export default totalMessBill

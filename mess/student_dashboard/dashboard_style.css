@@ -13,6 +13,7 @@ body{
   background: #dfe9f5;
 }
 .container{
+  /* width: 300px; */
   display: flex;
 
 
