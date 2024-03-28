@@ -16,8 +16,11 @@ var firebaseConfig = {
 var app = initializeApp(firebaseConfig);
 var db = getFirestore(app);
 
+var totalMessBill = 0;
+
 export async function fetch_data() {
     var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
+
     if (docRef.exists()) {
         console.log(docRef.data())
         var jan = document.getElementById('jan-bill')
@@ -36,6 +39,8 @@ export async function fetch_data() {
         apr.textContent = docRef.data().apr24
         may.textContent = docRef.data().may24
 
+        console.log(docRef.data().jan24)
+
 
         var a = parseFloat(document.getElementById('jan-bill').textContent)
         var b = parseFloat(document.getElementById('feb-bill').textContent)
@@ -46,11 +51,21 @@ export async function fetch_data() {
         var t = (a + b + c + d + e)
 
         total.textContent = t
-
-        return t;
-
-        totalMessBill = 1000;
     }
 }
+
 fetch_data()
-export default totalMessBill
+
+    
+async function getTotalMessBill() {
+    var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
+    const janBill = docRef.data().jan24;
+    const febBill = docRef.data().feb24;
+    const marBill = docRef.data().mar24;
+    const aprBill = docRef.data().apr24;
+    const mayBill = docRef.data().may24;
+    totalMessBill = parseFloat(janBill) + parseFloat(febBill) + parseFloat(marBill) + parseFloat(aprBill) + parseFloat(mayBill);
+    return totalMessBill;
+}
+
+export default getTotalMessBill;

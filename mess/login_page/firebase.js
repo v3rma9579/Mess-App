@@ -84,3 +84,5 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
 
 
 })
+
+export {auth};
