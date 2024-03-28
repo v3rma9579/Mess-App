@@ -80,14 +80,11 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
     else {
         alert("User does not exist")
     }
-<<<<<<< HEAD
 
 
 
 })
 
 export {auth};
-=======
-})
-export {app,db,auth,currentuser}
->>>>>>> b9e5193be296f9287412d6d55098d862c8eef103
+// })
+// export {app,db,auth,currentuser}

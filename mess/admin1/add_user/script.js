@@ -37,8 +37,8 @@ document.getElementById("upload").addEventListener('click', async (e) => {
     const students = [];
 
     lines.forEach(line => {
-      const [email,name, phone] = line.split(',');
-      students.push({ email, name,phone });
+      const [email,name, phone,bill] = line.split(',');
+      students.push({ email, name,phone,bill });
     //   saveMessage(email);
     });
 
@@ -53,6 +53,7 @@ document.getElementById("upload").addEventListener('click', async (e) => {
       try {
         // console.log(student.email);
         await setDoc(doc(firestore, "user", student.email), student);
+        await setDoc(doc(firestore, "bills", student.email), student);
         await createUserWithEmailAndPassword(auth,student.email, student.phone);
         // await firestore.collection('user').doc(email).set({
         //   email: student.email,

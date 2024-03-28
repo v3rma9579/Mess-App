@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-const logoutBtn = document.querySelector(".logout")
+// const logoutBtn = document.querySelector(".logout")
 
-logoutBtn.addEventListener("click", () => {
-    localStorage.removeItem()
-    window.location.replace("../login_page/login.html")
-})
-=======
+// logoutBtn.addEventListener("click", () => {
+//     localStorage.removeItem()
+//     window.location.replace("../login_page/login.html")
+// })
 // import  totalMessBill  from "../mess_bill/bill.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAuth,signOut} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
@@ -34,4 +32,3 @@ const auth =getAuth(app);
         window.location.replace('../login_page/login.html')  
     })
 
->>>>>>> b9e5193be296f9287412d6d55098d862c8eef103
