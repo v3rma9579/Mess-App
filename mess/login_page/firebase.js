@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-
+let currentuser;
 const auth = getAuth(app);
 
 function validate_email(email) {
@@ -66,9 +66,9 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
 
     if (docSnap.exists()) {
         signInWithEmailAndPassword(auth, email, password).then(function (data) {
-            var user = data.currentUser
+             currentuser = data.currentUser
             alert(data.user.email + ' Logged In successfully')
-            window.location.href = "../Student_dashboard/index.html";
+            window.location.replace ("../Student_dashboard/index.html");
         })
             .catch(function (error) {
                 var error_code = error.code;
@@ -80,9 +80,14 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
     else {
         alert("User does not exist")
     }
+<<<<<<< HEAD
 
 
 
 })
 
 export {auth};
+=======
+})
+export {app,db,auth,currentuser}
+>>>>>>> b9e5193be296f9287412d6d55098d862c8eef103
