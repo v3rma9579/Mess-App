@@ -39,21 +39,30 @@ async function fetch_Notice() {
 
 fetch_Notice()
 // const app = initializeApp(firebaseConfig);
-const auth =getAuth(app);
+const auth = getAuth(app);
 // const db = getFirestore(app);
 
-onAuthStateChanged(auth,async(user)=>{
-    if(user){
-        console.log (user.uid);
-        const docref = await getDoc(doc(db,'user',user.email));
-        const name = docref.data().name;
-        document.getElementById('name1').textContent = `Welcome ${name}`
-        document.getElementById('gmail1').textContent = `${user.email}`
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        console.log(user.uid);
+        const docRef = await getDoc(doc(db, 'user', user.email));
+        if (docRef.exists()) {
+            const userData = docRef.data();
+            const name = userData.name; // Assuming 'name' is a field in your user document
+            document.getElementById('name1').textContent = `Welcome ${name}`;
+            document.getElementById('gmail1').textContent = `${user.email}`;
+            // Assuming 'profilePicUrl' is the URL of the profile picture
+            const profilePicUrl = userData.profilePicUrl;
+            if (profilePicUrl) {
+                document.getElementById("profile-img").src = profilePicUrl;
+            }
+
+        }
+    } else {
+        window.location.replace('../login_page/login.html');
     }
-    else{
-        window.location.replace('../login_page/login.html')
-    }
-})
+});
+
 
 
 

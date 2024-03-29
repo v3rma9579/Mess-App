@@ -67,8 +67,13 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
     if (docSnap.exists()) {
         signInWithEmailAndPassword(auth, email, password).then(function (data) {
              currentuser = data.currentUser
-            alert(data.user.email + ' Logged In successfully')
-            window.location.replace ("../Student_dashboard/index.html");
+             if(data.user.email == 'admin@gmail.com'){
+                window.location.replace("../admin1/index.html");
+             }
+             else{
+                 alert(data.user.email + ' Logged In successfully')
+                 window.location.replace ("../Student_dashboard/index.html");
+             }
         })
             .catch(function (error) {
                 var error_code = error.code;
