@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getDoc, getFirestore, doc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+import { getDoc, getFirestore,doc,getDocs,collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+import { getAuth,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
 
 
 // Your web app's Firebase configuration
@@ -15,57 +16,72 @@ var firebaseConfig = {
 // Initialize Firebase
 var app = initializeApp(firebaseConfig);
 var db = getFirestore(app);
-
+const auth = getAuth(app);
 var totalMessBill = 0;
 
-export async function fetch_data() {
-    var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
-
-    if (docRef.exists()) {
-        console.log(docRef.data())
-        var jan = document.getElementById('jan-bill')
-        var feb = document.getElementById('feb-bill')
-        var mar = document.getElementById('mar-bill')
-        var apr = document.getElementById('apr-bill')
-        var may = document.getElementById('may-bill')
-
-
-        var total = document.getElementById('total')
-        // addEventListener(onload, fetch_data)
-        // var y = fetch_data()
-        jan.textContent = docRef.data().jan24
-        feb.textContent = docRef.data().feb24
-        mar.textContent = docRef.data().mar24
-        apr.textContent = docRef.data().apr24
-        may.textContent = docRef.data().may24
-
-        console.log(docRef.data().jan24)
-
-
-        var a = parseFloat(document.getElementById('jan-bill').textContent)
-        var b = parseFloat(document.getElementById('feb-bill').textContent)
-        var c = parseFloat(document.getElementById('mar-bill').textContent)
-        var d = parseFloat(document.getElementById('apr-bill').textContent)
-        var e = parseFloat(document.getElementById('may-bill').textContent)
-
-        var t = (a + b + c + d + e)
-
-        total.textContent = t
+let email ; 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        email =user.email;
     }
+});
+
+var totalamount=0;
+export async function fetch_data() {
+    // const user=auth.currentUser;
+    var docRef = await getDocs(collection(db, 'monthlybill'))
+    var monthlybill= [];
+    // const tbody = document.getElementById('tbody');
+    let index=1;
+    await docRef.forEach(async (udoc)=>{
+        var monthdata={};
+        const userRef = await getDoc(doc(db,'monthlybill',udoc.id,'extra',email));
+        const useramount = userRef.data().amount;
+        monthdata[udoc.id]=udoc.data().amount;
+        monthlybill.push(monthdata);
+        // var rand=1;
+        totalamount+=Number(useramount)+Number(udoc.data().amount);
+        const tr = document.createElement('tr');
+        var html = `
+                    <td><a href="javascript:printUserData()">${index++}</a></td>
+                    <td>5</td>
+                    <td id="jan-bill">${udoc.data().amount}</td>
+                    <td id="jan-bill">${useramount}</td>
+                    <td id="jan-bill">${useramount+udoc.data().amount}</td>
+                    <td>Mess Bill for ${udoc.id}</td>
+            `
+        tr.innerHTML=html;
+        document.getElementById('tbody').insertBefore(tr, document.getElementById('tbody').children[0]);
+        
+        // document.getElementById('tbody').appendChild(tr);
+        console.log(totalamount);
+        document.getElementById('value').textContent=totalamount;
+        document.getElementById('abcd').textContent=totalamount;
+        
+    })
+    // const tr = document.createElement('tr');
+    // var html =`
+    // <td><b>Total Bill</b></td>
+    // <td></td>
+    // <td id="total"><b>${totalamount}</b></td>
+    // `
+    // tr.innerHTML=html;
+    console.log(monthlybill);
+    return totalamount;
 }
 
 fetch_data()
 
     
-async function getTotalMessBill() {
-    var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
-    const janBill = docRef.data().jan24;
-    const febBill = docRef.data().feb24;
-    const marBill = docRef.data().mar24;
-    const aprBill = docRef.data().apr24;
-    const mayBill = docRef.data().may24;
-    totalMessBill = parseFloat(janBill) + parseFloat(febBill) + parseFloat(marBill) + parseFloat(aprBill) + parseFloat(mayBill);
-    return totalMessBill;
-}
+// async function getTotalMessBill() {
+//     var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
+//     const janBill = docRef.data().jan24;
+//     const febBill = docRef.data().feb24;
+//     const marBill = docRef.data().mar24;
+//     const aprBill = docRef.data().apr24;
+//     const mayBill = docRef.data().may24;
+//     totalMessBill = parseFloat(janBill) + parseFloat(febBill) + parseFloat(marBill) + parseFloat(aprBill) + parseFloat(mayBill);
+//     return totalMessBill;
+// }
 
-export default getTotalMessBill;
+export default totalamount;

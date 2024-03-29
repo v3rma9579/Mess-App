@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getDoc, getFirestore, doc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
-import getTotalMessBill from "../mess_bill/bill.js";
+import { getDoc,getDocs, getFirestore, doc, collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+// import {fetch_data} from "../mess_bill/bill.js";
 // import  totalMessBill  from "../mess_bill/bill.js";
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAuth,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
@@ -24,11 +24,11 @@ var db = getFirestore(app);
 
 
 
-const totalMessBill = await getTotalMessBill();
-document.getElementById('abcd').textContent = (Math.round(totalMessBill * 100) / 100).toFixed(2)
+// const totalMessBill = await fetch_data();
+// document.getElementById('abcd').textContent = totalMessBill;
 
 async function fetch_Notice() {
-    var mess_Notice = await getDoc(doc(db, 'notice', 'notice-1'))
+    var mess_Notice = await getDoc(doc(db, 'notices', 'notice-1'))
 
     if(mess_Notice.exists()) {
         var notice = document.getElementById('mess-notice')
@@ -41,9 +41,10 @@ fetch_Notice()
 // const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 // const db = getFirestore(app);
-
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
+let email ; 
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+        email =user.email;
         console.log(user.uid);
         const docRef = await getDoc(doc(db, 'user', user.email));
         if (docRef.exists()) {
@@ -67,5 +68,20 @@ onAuthStateChanged(auth, async (user) => {
 
 
 // document.getElementById('abcd').innerHTML = totalMessBill
-console.log("aayush gan")
+// console.log("aayush gan")
 // document.getElementById('name1').textContent =`Welcome, ${currentuser.email}`
+var totalamount=0;
+async function fetch_data() {
+    // const user=auth.currentUser;
+    var docRef = await getDocs(collection(db, 'monthlybill'))
+    await docRef.forEach(async (udoc)=>{
+        const userRef = await getDoc(doc(db,'monthlybill',udoc.id,'extra',email));
+        const useramount = userRef.data().amount;
+        totalamount+=Number(useramount)+Number(udoc.data().amount);        
+        // document.getElementById('tbody').appendChild(tr);
+        console.log(totalamount);
+        document.getElementById('abcd').textContent=totalamount;
+        
+    })
+}
+fetch_data();

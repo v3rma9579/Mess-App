@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Mess Fee System</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Panel - Mess Fee System</h1>
+  </header>
+  
+  <main>
+    <section id="updateBillsSection">
+      <h2>Update Bills for All Students</h2>
+      <div class="form-group">
+        <label for="monthSelect">Select Month:</label>
+        <select id="monthSelect">
+          <option value="january2024">January</option>
+          <option value="february2024">February</option>
+          <option value="march2024">March</option>
+          <option value="april2024">April</option>
+          <option value="may2024">May</option>
+          <option value="june2024">June</option>
+        </select>
+        <label for="amountInput">Enter Amount:</label>
+        <input type="number" id="amountInput">
+        <button id="updateBillsBtn">Update Bills</button>
+      </div>
+    </section>
+    
+    <hr>
+    
+    <section id="addExtraExpenseSection">
+      <h2>Add Extra Expense for Specific Student</h2>
+      <div class="form-group">
+        <label for="monthSelect">Select Month:</label>
+        <select id="monthSelectextra">
+          <option value="january2024">January</option>
+          <option value="february2024">February</option>
+          <option value="march2024">March</option>
+          <option value="april2024">April</option>
+          <option value="may2024">May</option>
+          <option value="june2024">June</option>
+        </select>
+        <label for="studentEmail">Student Email:</label>
+        <input type="text" id="studentEmail">
+        <label for="extraExpenseInput">Enter Extra Expense:</label>
+        <input type="number" id="extraExpenseInput">
+        <button id="addExtraExpenseBtn">Add Extra Expense</button>
+      </div>
+    </section>
+
+    <section id="studentsListSection">
+      <h2>All Students</h2>
+      <select id="renderstudent">
+        <option value="january2024">January</option>
+        <option value="february2024">February</option>
+        <option value="march2024">March</option>
+        <option value="april2024">April</option>
+        <option value="may2024">May</option>
+        <option value="june2024">June</option>
+      </select>
+      <div id="studentsList">
+        <!-- Student items will be dynamically added here -->
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./admin.js"></script>
+</body>
+</html>
