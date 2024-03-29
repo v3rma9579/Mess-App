@@ -1,6 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getDoc, getFirestore, doc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
 import getTotalMessBill from "../mess_bill/bill.js";
+// import  totalMessBill  from "../mess_bill/bill.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import { getAuth,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
+// import { getDoc, getFirestore, doc,} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -32,3 +38,34 @@ async function fetch_Notice() {
 }
 
 fetch_Notice()
+// const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+// const db = getFirestore(app);
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        console.log(user.uid);
+        const docRef = await getDoc(doc(db, 'user', user.email));
+        if (docRef.exists()) {
+            const userData = docRef.data();
+            const name = userData.name; // Assuming 'name' is a field in your user document
+            document.getElementById('name1').textContent = `Welcome ${name}`;
+            document.getElementById('gmail1').textContent = `${user.email}`;
+            // Assuming 'profilePicUrl' is the URL of the profile picture
+            const profilePicUrl = userData.profilePicUrl;
+            if (profilePicUrl) {
+                document.getElementById("profile-img").src = profilePicUrl;
+            }
+
+        }
+    } else {
+        window.location.replace('../login_page/login.html');
+    }
+});
+
+
+
+
+// document.getElementById('abcd').innerHTML = totalMessBill
+console.log("aayush gan")
+// document.getElementById('name1').textContent =`Welcome, ${currentuser.email}`
