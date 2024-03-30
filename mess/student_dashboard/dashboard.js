@@ -29,6 +29,7 @@ const auth =getAuth(app);
     console.log("xdythxdtyhxfyth");
     logout_button.addEventListener('click',async()=>{
         await signOut(auth)
-        window.location.replace('../login_page/login.html')  
+        // window.location.replace('../login_page/login.html') 
+        window.onload('../login_page/login.html') 
     })
 
