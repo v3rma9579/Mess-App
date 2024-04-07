@@ -43,7 +43,7 @@ export async function fetch_data() {
         totalamount+=Number(useramount)+Number(udoc.data().amount);
         const tr = document.createElement('tr');
         var html = `
-                    <td><a href="javascript:printUserData()">${index++}</a></td>
+                    <td>${index++}</td>
                     <td>5</td>
                     <td id="jan-bill">${udoc.data().amount}</td>
                     <td id="jan-bill">${useramount}</td>

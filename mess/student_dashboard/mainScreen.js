@@ -79,6 +79,8 @@ async function fetch_data() {
         // document.getElementById('tbody').appendChild(tr);
         console.log(totalamount);
         document.getElementById('abcd').textContent=totalamount;
+        document.getElementById('extra').textContent=Number(userRef.data().amount);
+        document.getElementById('month').textContent=6;
         
     })
 }
