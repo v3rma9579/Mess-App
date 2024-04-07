@@ -24,7 +24,7 @@ document.addEventListener('load',()=>{
             window.load("../Student_dashboard/index.html")
         }
         else{
-            window.replace("../login_page/login.html'")
+            window.replace("../../index.html'")
         }
     })
 })
