@@ -28,7 +28,7 @@ var db = getFirestore(app);
 // document.getElementById('abcd').textContent = totalMessBill;
 
 async function fetch_Notice() {
-    var mess_Notice = await getDoc(doc(db, 'notices', 'notice-1'))
+    var mess_Notice = await getDoc(doc(db, 'notice', 'notice-1'))
 
     if(mess_Notice.exists()) {
         var notice = document.getElementById('mess-notice')
