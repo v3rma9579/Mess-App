@@ -6,7 +6,7 @@
 // })
 // import  totalMessBill  from "../mess_bill/bill.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-import { getAuth,signOut} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
+import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,15 +21,38 @@ var firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth =getAuth(app);
+const auth = getAuth(app);
 
 
 
-    const logout_button=document.getElementById('logout');
-    console.log("xdythxdtyhxfyth");
-    logout_button.addEventListener('click',async()=>{
-        await signOut(auth)
-        // window.location.replace('../login_page/login.html') 
-        window.onload('../login_page/login.html') 
-    })
+// const logout_button=document.getElementById('logout');
+// logout_button.addEventListener('click',async()=>{
+//     await signOut(auth)
+//     window.location.replace('../login_page/login.html') 
+// })
 
+
+const logout_button = document.getElementById('logout');
+
+logout_button.addEventListener('click', async () => {
+    await signOut(auth);
+    const loginPage = '../login_page/login.html';
+    const windowFeatures = 'target=_parent';
+    window.open(loginPage, '_parent', windowFeatures);
+    window.top.close();
+    noBack();
+    disableBackButton();
+});
+
+function noBack()
+{
+    window.history.forward();
+}
+
+function disableBackButton()
+{
+    window.onbeforeunload = function()
+    {
+        canGoBack = false;
+    };
+}

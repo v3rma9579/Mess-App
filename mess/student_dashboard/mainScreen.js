@@ -59,8 +59,6 @@ let email ;
             }
 
         }
-    } else {
-        window.location.replace('../login_page/login.html');
     }
 });
 
