@@ -6,6 +6,7 @@
 
 .container {
     
+    overflow-y: scroll;
     text-align: center;
     background-image: url("/Mess-App/mess/about_us/background.jpg");
     /* background: #129e9e; */
