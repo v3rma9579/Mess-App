@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-
+let currentuser;
 const auth = getAuth(app);
 
 function validate_email(email) {
@@ -66,9 +66,14 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
 
     if (docSnap.exists()) {
         signInWithEmailAndPassword(auth, email, password).then(function (data) {
-            var user = data.currentUser
-            alert(data.user.email + ' Logged In successfully')
-            window.location.href = "../Student_dashboard/index.html";
+             currentuser = data.currentUser
+             if(data.user.email == 'admin@gmail.com'){
+                window.location.replace("/Mess-App/mess/admin1/index.html");
+             }
+             else{
+                 alert(data.user.email + ' Logged In successfully')
+                 window.location.replace ("/Mess-App/mess/student_dashboard/index.html");
+             }
         })
             .catch(function (error) {
                 var error_code = error.code;
@@ -84,3 +89,8 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
 
 
 })
+
+export {auth};
+// })
+// export {app,db,auth,currentuser}
+

@@ -1,143 +1,87 @@
-const monthly_bill = `
-<!DOCTYPE html>
-<html lang="en">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+import { getDoc, getFirestore,doc,getDocs,collection } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js"
+import { getAuth,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"
 
-<head>
-<meta charset="utf-8">
-<title>Example 1</title>
-<link rel="stylesheet" href="monthly_bill.css" media="all" />
-</head>
 
-<body>
-<header class="clearfix">
-    <div id="logo">
-    <img src="../login_page/logo.png">
-    </div>
-    <h1>Student Invoice</h1>
-    <div id="student-info">
-    <h2>
-        <div><span>NAME</span> Shubham Verma</div>
-    </h2>
-    <h2>
-        <div><span>ROLL NO</span> MCA/10012/23</div>
-    </h2>
-    <h2>
-        <div><span>ADDRESS</span> HZB</div>
-    </h2>
-    <h2>
-        <div><span>EMAIL</span>xyz@gmail.com</div>
-    </h2>
-    <h2>
-        <div><span>DATE</span> 31/01/2024</div>
-    </h2>
-    </div>
-</header>
-<main>
-    <table>
-    <thead>
-        <tr>
-        <th class="service">BILL NO.</th>
-        <th class="desc">HOSTEL</th>
-        <th>AMOUNT</th>
-        <th>REMARKS</th>
-        <th>DATE</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-        <td class="service">123893782</td>
-        <td class="desc">5</td>
-        <td class="unit">192</td>
-        <td class="qty">Bill for Janurary Month</td>
-        <td class="total">31/01/2024</td>
-        </tr>
-        <tr>
-        <td colspan="4" class="grand total">GRAND TOTAL</td>
-        <td class="grand total">192.00</td>
-        </tr>
-    </tbody>
-    </table>
-    <div id="notices">
-</main>
-<footer>
-    This is an auto generated invoice.
-</footer>
-</body>
-</html>        
-`
-function printUserData() {
-    const printWindow = window.open("", "_blank");
-    printWindow.document.write(monthly_bill)
-    printWindow.document.close();
-    printWindow.print();
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDRl9n7bOgYSegReCR0CFJ_BRb63IoKy0w",
+    authDomain: "mess-maintainance.firebaseapp.com",
+    projectId: "mess-maintainance",
+    storageBucket: "mess-maintainance.appspot.com",
+    messagingSenderId: "823193074711",
+    appId: "1:823193074711:web:23d8c3fa137a8f15627052"
+};
 
+// Initialize Firebase
+var app = initializeApp(firebaseConfig);
+var db = getFirestore(app);
+const auth = getAuth(app);
+var totalMessBill = 0;
+
+let email ; 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        email =user.email;
+    }
+});
+
+var totalamount=0;
+export async function fetch_data() {
+    // const user=auth.currentUser;
+    var docRef = await getDocs(collection(db, 'monthlybill'))
+    var monthlybill= [];
+    // const tbody = document.getElementById('tbody');
+    let index=1;
+    await docRef.forEach(async (udoc)=>{
+        var monthdata={};
+        const userRef = await getDoc(doc(db,'monthlybill',udoc.id,'extra',email));
+        const useramount = userRef.data().amount;
+        monthdata[udoc.id]=udoc.data().amount;
+        monthlybill.push(monthdata);
+        // var rand=1;
+        totalamount+=Number(useramount)+Number(udoc.data().amount);
+        const tr = document.createElement('tr');
+        var html = `
+                    <td>${index++}</td>
+                    <td>5</td>
+                    <td id="jan-bill">${udoc.data().amount}</td>
+                    <td id="jan-bill">${useramount}</td>
+                    <td id="jan-bill">${useramount+udoc.data().amount}</td>
+                    <td>Mess Bill for ${udoc.id}</td>
+            `
+        tr.innerHTML=html;
+        document.getElementById('tbody').insertBefore(tr, document.getElementById('tbody').children[0]);
+        
+        // document.getElementById('tbody').appendChild(tr);
+        console.log(totalamount);
+        document.getElementById('value').textContent=totalamount;
+        document.getElementById('abcd').textContent=totalamount;
+        
+    })
+    // const tr = document.createElement('tr');
+    // var html =`
+    // <td><b>Total Bill</b></td>
+    // <td></td>
+    // <td id="total"><b>${totalamount}</b></td>
+    // `
+    // tr.innerHTML=html;
+    console.log(monthlybill);
+    return totalamount;
 }
 
-// var bill_no = 0;
-// var tbody = document.getElementById('tbody1');
+fetch_data()
 
-// function addStudentDataToTable(bill_no, hostel, amount, remakrs, date) {
-//     let trow = document.createElement("trow");
-//     let td1 = document.createElement('td');
-//     let td2 = document.createElement('td');
-//     let td3 = document.createElement('td');
-//     let td4 = document.createElement('td');
-//     let td5 = document.createElement('td');
-
-//     td1.innerHTML = ++bill_no;
-//     td2.innerHTML = hostel;
-//     td3.innerHTML = amount;
-//     td4.innerHTML = remakrs;
-//     td5.innerHTML = date;
-
-//     trow.appendChild(td1);
-//     trow.appendChild(td2);
-//     trow.appendChild(td3);
-//     trow.appendChild(td4);
-//     trow.appendChild(td5);
-
-//     tbody.appendChild(trow);
-
+    
+// async function getTotalMessBill() {
+//     var docRef = await getDoc(doc(db, 'bill', 'shubham123@gmail.com'))
+//     const janBill = docRef.data().jan24;
+//     const febBill = docRef.data().feb24;
+//     const marBill = docRef.data().mar24;
+//     const aprBill = docRef.data().apr24;
+//     const mayBill = docRef.data().may24;
+//     totalMessBill = parseFloat(janBill) + parseFloat(febBill) + parseFloat(marBill) + parseFloat(aprBill) + parseFloat(mayBill);
+//     return totalMessBill;
 // }
 
-// function addAllItemsToTable(StudentBill) {
-//     stdNo = 0;
-//     tbody.innerHTML = "";
-//     StudentBill.forEach(element => {
-//         addStudentDataToTable(element.bill_no, element.hostel, element.amount, element.remakrs, element.date);
-//     });
-// }
-
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//     apiKey: "AIzaSyDRl9n7bOgYSegReCR0CFJ_BRb63IoKy0w",
-//     authDomain: "mess-maintainance.firebaseapp.com",
-    // databaseURL: "https://mess-maintainance-default-rtdb.firebaseio.com",
-//     projectId: "mess-maintainance",
-//     storageBucket: "mess-maintainance.appspot.com",
-//     messagingSenderId: "823193074711",
-//     appId: "1:823193074711:web:23d8c3fa137a8f15627052"
-// };
-
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-
-// function getAllDataOnce() {
-//     const dbRef = ref(db);
-
-//     get(child(dbRef, "StudentBill")).then((snapshot) => {
-//         var student = [];
-
-//         snapshot.forEach(childSnapshot => {
-//             student.push(childSnapshot.val());
-//         });
-//         addAllItemsToTable(student);
-//     })
-// }
-
-// window.onload = getAllDataOnce();
+export default totalamount;

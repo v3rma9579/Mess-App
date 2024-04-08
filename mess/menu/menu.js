@@ -35,10 +35,10 @@ async function renderMenu() {
                 const data = menuSnap.data();
                 const row = `<tr>
                                 <td>${currentDay}</td>
-                                <td><input type="text" id="breakfast-${currentDay}" value="${data.breakfast || ''}"></td>
-                                <td><input type="text" id="lunch-${currentDay}" value="${data.lunch || ''}"></td>
-                                <td><input type="text" id="snack-${currentDay}" value="${data.snack || ''}"></td>
-                                <td><input type="text" id="dinner-${currentDay}" value="${data.dinner || ''}"></td>
+                                <td><input type="text" id="breakfast-${currentDay}" value="${data.breakfast || '' } " Readonly></td>
+                                <td><input type="text" id="lunch-${currentDay}" value="${data.lunch || ''}"Readonly ></td>
+                                <td><input type="text" id="snack-${currentDay}" value="${data.snack || ''}" Readonly ></td>
+                                <td><input type="text" id="dinner-${currentDay}" value="${data.dinner || ''}" Readonly></td>
                             </tr>`;
                 menuTable.innerHTML += row;
             } else {

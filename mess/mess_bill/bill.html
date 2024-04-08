@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostel Bill</title>
-    <link rel="stylesheet" href="bill.css">
+    <link rel="stylesheet" href="/Mess-App/mess/mess_bill/bill.css">
 </head>
-<script src="bill.js"></script>
+<script src="/Mess-App/mess/mess_bill/printMonBill.js"></script>
 <script>
-   
+    
 </script>
 
 <body>
@@ -20,55 +20,58 @@
             <tr>
                 <th>Bill No.</th>
                 <th>Hostel</th>
-                <th>Amount</th>
-                <th>Remarks</th>
-                <th>Date</th>
+                <th>Monthly Amount</th>
+                <th>Extra Amount</th>
+                <th>Total Bill</th>
+                <th>Month</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
+        <tbody id="tbody">
+            <!-- <tr>
                 <td><a href="javascript:printUserData()">248918323</a></td>
                 <td>5</td>
-                <td>192.00</td>
+                <td id="jan-bill"></td>
                 <td>Mess Bill for January</td>
                 <td>31-01-2024</td>
             </tr>
             <tr>
-                <td><a href="">248918343</a></td>
+                <td><a href="javascript:printUserData()">248918343</a></td>
                 <td>5</td>
-                <td>4646.00</td>
+                <td id="feb-bill"></td>
                 <td>Mess Bill for Feburary</td>
                 <td>28-02-2024</td>
             </tr>
             <tr>
-                <td><a href="">248919722</a></td>
+                <td><a href="javascript:printUserData()">248919722</a></td>
                 <td>5</td>
-                <td>4886.00</td>
+                <td id="mar-bill"></td>
                 <td>Mess Bill for March</td>
                 <td>31-03-2024</td>
             </tr>
             <tr>
-                <td><a href="">323878123</a></td>
+                <td><a href="javascript:printUserData()">323878123</a></td>
                 <td>5</td>
-                <td>4886.00</td>
+                <td id="apr-bill"></td>
                 <td>Mess Bill for April</td>
                 <td>30-04-2024</td>
-            </tr>
-            <tr>
-                <td><a href="">439287932</a></td>
+            </tr> -->
+            <!-- <tr>
+                <td><a href="javascript:printUserData()">439287932</a></td>
                 <td>5</td>
-                <td>4886.00</td>
+                <td id="may-bill"></td>
                 <td>Mess Bill for May</td>
                 <td>31-01-2024</td>
-            </tr>
-            <tr>
+            </tr>-->
+            <tr id="total">
                 <td><b>Total Bill</b></td>
                 <td></td>
-                <td id="xyz"><b>32990.00</b></td>
-            </tr>
+                <td><b id="value"></b></td>
+            </tr> 
         </tbody>
     </table>
 </center>
+<script type="module" src="/Mess-App/mess/mess_bill/bill.js" defer></script>
+
 </body>
 
 </html>

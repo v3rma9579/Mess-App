@@ -15,7 +15,7 @@ form {
     /* margin-left: 570px; */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgb(0, 96, 128);
+    box-shadow: 0 2px 4px #02459d;
     width: 100%;
     max-width: 400px;
 }
@@ -54,7 +54,7 @@ textarea {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #13a6c0;
+    background-color: #02459d;
     color: white;
     border: none;
     border-radius: 4px;
@@ -62,7 +62,7 @@ button {
 }
 h1{
     font-size: 50px;
-    color: rgb(99, 192, 234);
+    color: #02459d;
     text-align: center;
     margin-top: 80px;;
 }

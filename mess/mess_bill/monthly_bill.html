@@ -4,13 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Mess Bill Invoice</title>
-  <link rel="stylesheet" href="monthly_bill.css" media="all" />
+  <link rel="stylesheet" href="/Mess-App/mess/mess_bill/monthly_bill.css" media="all" />
+  <script type="module" src="/Mess-App/mess/mess_bill/bill.js"></script>
 </head>
 
 <body>
   <header class="clearfix">
     <div id="logo">
-      <img src="../login_page/logo.png">
+      <img src="/Mess-App/mess/login_page/logo.png">
     </div>
     <h1>Student Invoice</h1>
     <div id="student-info">
@@ -46,13 +47,13 @@
         <tr>
           <td class="service">123893782</td>
           <td class="desc">5</td>
-          <td class="unit">192</td>
+          <td class="unit" id="feb-bill"></td>
           <td class="qty">Bill for Janurary Month</td>
           <td class="total">31/01/2024</td>
         </tr>
         <tr>
           <td colspan="4" class="grand total">GRAND TOTAL</td>
-          <td class="grand total">192.00</td>
+          <td class="grand total" id="total"></td>
         </tr>
 
 

@@ -18,6 +18,16 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.download {
+  margin: 0;
+  position: absolute;
+  padding-top: 10%;
+  top: 80%;
+  left: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}   
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -30,6 +40,7 @@ table {
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
+  
 }
 
 th, td {
@@ -39,7 +50,7 @@ th, td {
 }
 
 thead {
-  background-color: #f0f0f0;
+  background-color: #478de8;
 }
 
 tbody tr:nth-child(even) {
@@ -54,14 +65,17 @@ tbody tr:hover {
 input[type="text"] {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   box-sizing: border-box;
 }
-
+input:focus{
+  outline:none;
+}
 /* Button styles */
 button {
   background-color: #4CAF50;
+  /* align-items: center; */
   color: white;
   padding: 10px 20px;
   border: none;

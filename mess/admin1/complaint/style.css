@@ -1,0 +1,67 @@
+/* Reset default styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container Styles */
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #dad0d0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading Styles */
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #7e4c4c;
+  }
+  
+  /* Complaint Item Styles */
+  .complaint-item {
+    border-bottom: 1px solid #633d3d;
+    padding: 20px 0;
+  }
+  
+  .complaint-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Complaint Details Styles */
+  .complaint-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .complaint-details h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .complaint-details p {
+    margin: 0;
+    color: #666;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    .complaint-item {
+      padding: 15px 0;
+    }
+  }
+  
