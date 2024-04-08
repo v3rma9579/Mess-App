@@ -68,11 +68,11 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
         signInWithEmailAndPassword(auth, email, password).then(function (data) {
              currentuser = data.currentUser
              if(data.user.email == 'admin@gmail.com'){
-                window.location.replace("/mess/admin1/index.html");
+                window.location.replace("/Mess-App/mess/admin1/index.html");
              }
              else{
                  alert(data.user.email + ' Logged In successfully')
-                 window.location.replace ("/mess/Student_dashboard/index.html");
+                 window.location.replace ("/Mess-App/mess/Student_dashboard/index.html");
              }
         })
             .catch(function (error) {

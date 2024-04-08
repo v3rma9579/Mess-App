@@ -21,10 +21,10 @@ var auth= getAuth(app);
 document.addEventListener('load',()=>{
     onAuthStateChanged(auth).then((user)=>{
         if(user){
-            window.load("/mess/Student_dashboard/index.html")
+            window.load("/Mess-App/mess/Student_dashboard/index.html")
         }
         else{
-            window.replace("/index.html'")
+            window.replace("/Mess-App/index.html'")
         }
     })
 })

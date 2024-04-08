@@ -31,7 +31,7 @@ document.getElementById('logout').addEventListener('click', function(event) {
         // Sign-out successful.
         console.log('User signed out successfully');
         // Redirect user to login page
-        window.location.href = "/index.html";
+        window.location.href = "/Mess-App/index.html";
     }).catch((error) => {
         // An error happened.
         console.error('Error signing out: ', error);
