@@ -72,7 +72,7 @@ document.getElementById("login-btn").addEventListener('click', async (e) => {
              }
              else{
                  alert(data.user.email + ' Logged In successfully')
-                 window.location.replace ("/Mess-App/mess/Student_dashboard/index.html");
+                 window.location.replace ("/Mess-App/mess/student_dashboard/index.html");
              }
         })
             .catch(function (error) {
