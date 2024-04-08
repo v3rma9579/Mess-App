@@ -68,7 +68,10 @@ git clone https://github.com/v3rma9579/Mess-App
 cd \Mess-App
 ```
 
- ##### Run in live server
+  ##### Open index.html File
+```bash
+Run with live server
+```
  
 ## Requirements to contribute
 
