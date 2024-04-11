@@ -11,14 +11,14 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="brand"><span>Contact</span></h1>
+    <h1 class="brand"><span>Contact us</span></h1>
     <div class="wrapper">
       <div class="hostel-info">
-        <h3>Contact</h3>
+        <!-- <h3>Contact</h3> -->
         <ul>
-          <li><i class="fa fa-road"></i> 44 Something st</li>
-          <li><i class="fa fa-phone"></i> (555) 555-5555</li>
-          <li><i class="fa fa-envelope"></i> test@acme.test</li>
+          <li><i class="fa fa-road"></i> Mesra ,Ranchi (India) - 835215</li>
+          <li><i class="fa fa-phone"></i> 7812349823</li>
+          <li><i class="fa fa-envelope"></i> contact@bitmesra.ac.in</li>
         </ul>
       </div>
       <div class="contact">
@@ -31,19 +31,23 @@
           </p>
           <p>
             <label>Hostel</label>
-            <input type="text" name="hostel" id="hostel">
+            <input type="number"  name="hostel" id="hostel" min="1" max="15" required>
           </p>
           <p>
             <label>Email Address</label>
             <input type="email" name="email" id="email" required>
           </p>
+          
+
           <p>
             <label>Phone Number</label>
-            <input type="text" name="phone" id="phone">
+            <input type="text" name="phone" id="phone" pattern="\d{10}" title="Please enter a 10-digit phone number" required>
+            <span id="phoneError" class="error"></span>
           </p>
+  
           <p class="full">
             <label>Message</label>
-            <textarea name="message" rows="5" id="message"></textarea>
+            <textarea name="message" rows="5" id="message" required></textarea>
           </p>
           <p class="full">
             <button type="submit">Submit</button>

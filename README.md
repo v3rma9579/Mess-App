@@ -9,7 +9,9 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/v3rma9579/MediaPlayer?logo=github&labelColor=black&color=ff3399)](https://github.com/v3rma9579/Mess-Maintenance-App/graph/contributors)
 
-This is a project based on BIT Mess Maintenance System.
+This is a project based on BIT Mess Maintenance System made with ❤️.
+
+Have a look at [here!](https://harsh4662.github.io/Mess-App/)
 
 
 <br>
@@ -68,7 +70,10 @@ git clone https://github.com/v3rma9579/Mess-App
 cd \Mess-App
 ```
 
- ##### Run in live server
+  ##### Open index.html File
+```bash
+Run with live server
+```
  
 ## Requirements to contribute
 

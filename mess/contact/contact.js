@@ -41,6 +41,7 @@ function submitForm(e){
   document.getElementById('contactForm').reset();
 }
 
+// Function to get get form values
 function getInputVal(id){
   return document.getElementById(id).value;
 }
@@ -55,3 +56,64 @@ async function  saveMessage(name, hostel, email, phone, message){
     'message':message
   });
 }
+
+
+//Addition of validation
+function validateForm() {
+  var name = document.getElementById("name").value.trim();
+  
+  var email = document.getElementById("email").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var nameError = document.getElementById("nameError");
+ 
+  var emailError = document.getElementById("emailError");
+  var phoneError = document.getElementById("phoneError");
+
+
+  var isValid = true;
+
+  // Validate name
+  if (name === "") {
+    nameError.textContent = "Name is required";
+    isValid = false;
+  } else {
+    nameError.textContent = "";
+  }
+ 
+
+  // Validate email
+  if (email === "") {
+    emailError.textContent = "Email is required";
+    isValid = false;
+  } else {
+    emailError.textContent = "";
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      emailError.textContent = "Invalid email format";
+      isValid = false;
+    }
+  }
+
+  // Validate phone number
+  const phoneInput = document.getElementById('phone');
+
+  phoneInput.addEventListener('input', () => {
+    const phoneValue = phoneInput.value.trim();
+    const phoneRegex = /^(\+\d{1,3})? ?(\d{10})$/;
+  
+    if (phoneRegex.test(phoneValue)) {
+      phoneInput.classList.remove('invalid');
+      phoneInput.classList.add('valid');
+    } else {
+      phoneInput.classList.remove('valid');
+      phoneInput.classList.add('invalid');
+    }
+  });
+
+  return isValid;
+}
+
+
+
+
+
