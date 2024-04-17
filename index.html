@@ -2,46 +2,304 @@
 <html lang="en">
 
 <head>
-
+    <meta charset="utf-8">
     <title>Mess Maintenance System</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/Mess-App/mess/login_page/login.css" />
+    <!-- Favicon -->
+    <link href="/Mess-App/mess/images/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="/Mess-App/mess/home_page/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/Mess-App/mess/home_page/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/Mess-App/mess/home_page/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Template Stylesheet -->
+    <link href="/Mess-App/mess/home_page/home.css" rel="stylesheet">
 
 </head>
-<body background="/Mess-App/mess/login_page/pic3.jpg">
 
-    <div id="abc">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="/Mess-App/mess/services/services.html">Services</a></li>
-                <li><a href="/Mess-App/mess/about_us/Aboutus.html">About</a></li>
-                <li><a href="/Mess-App/mess/contact/contact_page.html">Contact Us</a></li>
-            </ul>
-        </nav>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
     </div>
+    <!-- Spinner End -->
 
-    <form>
 
-        <img class="logo" src="/Mess-App/mess/login_page/logo.png" alt="Company Logo">
-        <h3>Mess Maintenance System</h3>
 
-        <label for="username"></label>
-        <input type="text" placeholder="Enter Username" id="email">
-        <div id="erroremail"></div>
-
-        <label for="password"></label>
-        <input type="password" placeholder="Enter Password" id="password">
-        <div id="errorpass"></div>
-
-        <button id="login-btn"> 
-        Login
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="/Mess-App/index.html" class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <img src="/Mess-App/mess/images/logo.png" alt="Logo" class="navbar-brand">
+            <h2 class="m-0"><i class="fa fa-cutlery" aria-hidden="true"></i>Mess Maintenance System</h2>
+        </a>
+        
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
         </button>
-    </form>
-    <script type="module" src="/Mess-App/mess/login_page/firebase.js"></script>
-</body>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/Mess-App/index.html" class="nav-item nav-link active">Home</a>
+                <a href="/Mess-App/mess/about_us/Aboutus.html" class="nav-item nav-link">About</a>
+                <a href="/Mess-App/mess/hostel_menu/hostel_menu.html" class="nav-item nav-link">Mess Menu</a>
+                <a href="/Mess-App/mess/contact/contact_page.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="/Mess-App/login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">LOGIN<i
+                    class="fa-solid fa-right-to-bracket"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
 
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="/Mess-App/mess/images/bb.jpeg" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7">
+                                    <h1 class="display-2 text-light mb-5 animated slideInDown">Welcome to Our Mess Maintenance System!</h1>
+                                    <h4 class="display-10 text-light mb-5 animated slideInDown">Manage Your Mess Operations Efficiently.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="/Mess-App/mess/images/22.jpeg" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-7">
+                                    <h1 class="display-2 text-light mb-5 animated slideInDown">Welcome to Our Mess Maintenance System!</h1>
+                                    <h4 class="display-10 text-light mb-5 animated slideInDown">Manage Your Mess Operations Efficiently.</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px;">
+                        <img class="position-absolute w-100 h-100" src="/Mess-App/mess/images/2.jpg" alt=""
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <h6 class="text-primary text-uppercase mb-2">About Us</h6>
+                        <h1 class="display-6 mb-4"> </h1>
+                        <p> In a Mess Management System, students are accommodated in 14
+                            Hostels which are managed by BIT
+                            Welfare Society under Dean SA. These halls/hostels are administered by Wardens and Assistant
+                            Wardens (Mess, Maintenance,
+                            Allotment) with help of hall managers and supervisors. Catering
+                            service is provided by the regular hall staff members in some of
+                            the halls, and for the remaining halls it has been outsourced to
+                            private agencies. Cleaning service is outsourced for all the halls
+                            of residence. Activities related to Mess operations and monitoring, sports and games,
+                            cultural events, library etc. are managed
+                            by various elected general secretaries and overseen by The Hall
+                            President.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- Team Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <h3 class="text-primary text-uppercase mb-2">Meet The Team</h3>
+            </div>
+            <div class="row g-0 team-items">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="/Mess-App/mess/about_us/Img/shub.jpg" alt="">
+                            <div class="team-social text-center">
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="https://github.com/v3rma9579"><i
+                                        class="fab fa-github"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="mt-2">Shubham Verma</h5>
+                            <span>(MCA/10012/23)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid h-100 w-100" src="/Mess-App/mess/about_us/Img/hrs.jpg" alt="">
+                            <div class="team-social text-center">
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href="https://github.com/Harsh4662"><i
+                                        class="fab fa-github"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="mt-2">Harsh Raj</h5>
+                            <span>(MCA/10011/23)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="/Mess-App/mess/about_us/Img/aak.jpg" alt="">
+                            <div class="team-social text-center">
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-github"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="mt-2">Aakash Chaudhary</h5>
+                            <span>(MCA/10034/23)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item position-relative">
+                        <div class="position-relative">
+                            <img class="img-fluid" src="/Mess-App/mess/about_us/Img/MY PIC WHITE BG.jpg" alt="">
+                            <div class="team-social text-center">
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-github"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-outline-primary border-2 m-1" href=""><i
+                                        class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="bg-light text-center p-4">
+                            <h5 class="mt-2">Utkarsh Kumar</h5>
+                            <span>(MCA/10002/23)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer my-6 mb-0 py-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Get In Touch</h4>
+                    <h2 class="text-primary mb-4"><i class="fa fa-cutlery text-white me-2"></i>Mess App</h2>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>BIT MESRA, Ranchi</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>18003457057 / 18003457058</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>admin@gmail.com</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="text-white mt-4 mb-3">Follow Us</h6>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-outline-light me-1" href="https://www.facebook.com/BITMesraRanchi/"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light me-1" href="https://www.bitmesra.ac.in/"><i class="fa fa-globe"></i></a>
+                        <a class="btn btn-square btn-outline-light me-1" href="https://twitter.com/bitmesra"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light me-0" href="https://www.linkedin.com/school/b.i.t.-mesra-ranchi/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; Mess Maintenance System. All rights reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    Designed By <a href="https://github.com/v3rma9579/Mess-App">P:02</a>
+                    <!-- <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"
+        integrity="sha512-ahmSZKApTDNd3gVuqL5TQ3MBTj8tL5p2tYV05Xxzcfu6/ecvt1A0j6tfudSGBVuteSoTRMqMljbfdU0g2eDNUA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+        integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Template Javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="/Mess-App/mess/home_page/main.js"></script>
+
+</body>
 </html>

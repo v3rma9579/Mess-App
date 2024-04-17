@@ -36,7 +36,7 @@ const logout_button = document.getElementById('logout');
 
 logout_button.addEventListener('click', async () => {
     await signOut(auth);
-    const loginPage = '../../index.html';
+    const loginPage = '../../login.html';
     const windowFeatures = 'target=_parent';
     window.open(loginPage, '_parent', windowFeatures);
     window.top.close();

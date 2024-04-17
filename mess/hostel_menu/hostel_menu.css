@@ -1,0 +1,62 @@
+/* hostel_menu.css */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #444;
+    text-align: center;
+    font-size: 28px;
+    margin: 0 0 30px 0;
+}
+
+.hostel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hostel-list li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    border-left: 4px solid #4CAF50;
+}
+
+.hostel-list li:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hostel-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.hostel-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .hostel-list li {
+        padding: 10px;
+    }
+}
