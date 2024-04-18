@@ -47,7 +47,7 @@ nav ul li a {
 }
 
 body {
-    background-image: url('pic3.jpg');
+    background-image: url('/Mess-App/mess/images/home_page.jpeg');
     background-color: #080710;
     background-size: cover;
 }
@@ -97,7 +97,7 @@ form {
     top: 50%;
     left: 50%;
     border-radius: 10px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 40px rgba(124, 120, 162, 0.6);
     padding: 50px 35px;
